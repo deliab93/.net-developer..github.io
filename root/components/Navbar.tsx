@@ -112,19 +112,17 @@ const Navbar: React.FC = () => {
           >
             Contact
           </NavLink>
-          <a 
-            href="#" 
-            className="btn btn-primary w-full justify-center"
-            onClick={(e) => {
-              e.preventDefault();
-              closeMenu();
-              // Would typically trigger a resume download
-              alert('Resume download would start here in a real implementation');
-            }}
+               <NavLink 
+            to="/contact" 
+            className={({ isActive }) => 
+              isActive 
+                ? 'text-primary-500 dark:text-primary-400 font-medium py-2' 
+                : 'text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 py-2 transition-colors duration-200'
+            }
+            onClick={closeMenu}
           >
-            <Terminal className="mr-2" size={18} />
-            Resume
-          </a>
+            Contact
+          </NavLink>
         </nav>
       </div>
     </header>
